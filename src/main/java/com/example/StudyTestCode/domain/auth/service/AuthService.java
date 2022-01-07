@@ -1,5 +1,6 @@
 package com.example.StudyTestCode.domain.auth.service;
 
+import com.example.StudyTestCode.domain.auth.dto.AccountList;
 import com.example.StudyTestCode.domain.auth.dto.Join;
 import com.example.StudyTestCode.domain.auth.dto.Login;
 import com.example.StudyTestCode.domain.auth.entity.Account;
@@ -15,6 +16,10 @@ public class AuthService {
     private final AccountRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    public AccountList accounts(){
+        return new AccountList(userRepository.findAll());
+    }
+
     public String join(Join join) {
         Account user = Account.builder()
                 .name(join.getName())
@@ -28,15 +33,15 @@ public class AuthService {
         return "Joined";
     }
 
-    public String login(Login login) throws Exception {
-        Account user = Account.builder()
-                .email(login.getEmail())
-                .password(passwordEncoder.encode(login.getPassword()))
-                .role(Role.USER)
-                .build();
-
-        userRepository.save(user);
-
-        return "Joined";
-    }
+//    public String login(Login login) throws Exception {
+//        Account user = Account.builder()
+//                .email(login.getEmail())
+//                .password(passwordEncoder.encode(login.getPassword()))
+//                .role(Role.USER)
+//                .build();
+//
+//        userRepository.save(user);
+//
+//        return "Joined";
+//    }
 }
