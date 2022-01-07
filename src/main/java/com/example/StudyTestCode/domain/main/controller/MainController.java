@@ -1,4 +1,4 @@
-package com.example.StudyTestCode.domain.auth.controller;
+package com.example.StudyTestCode.domain.main.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

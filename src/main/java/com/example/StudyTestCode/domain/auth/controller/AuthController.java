@@ -19,7 +19,7 @@ public class AuthController {
     @GetMapping("/")
     public ResponseEntity<RequestResult> accounts(){
         try{
-            return new ResponseEntity<>(new RequestResult(authService.accounts()), HttpStatus.CREATED);
+            return new ResponseEntity<>(new RequestResult(authService.accounts()), HttpStatus.OK);
         }
         catch (Exception e){
             return new ResponseEntity<>(new RequestResult(e.getMessage()), HttpStatus.BAD_REQUEST);
