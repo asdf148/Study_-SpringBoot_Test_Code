@@ -1,4 +1,4 @@
-package com.example.StudyTestCode.domain;
+package com.example.StudyTestCode.domain.auth.controller;
 
 import com.example.StudyTestCode.domain.auth.controller.AuthController;
 import com.example.StudyTestCode.domain.auth.entity.Account;
